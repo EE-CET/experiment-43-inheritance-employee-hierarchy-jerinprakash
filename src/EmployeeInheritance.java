@@ -6,14 +6,14 @@ class Employee {
     int age;
     String phone;
     String address;
-    int salary;
+    double salary;
 
     void printDetails() {
-        System.out.println("Name: " + name);
-        System.out.println("Age: " + age);
-        System.out.println("Phone: " + phone);
-        System.out.println("Address: " + address);
-        System.out.println("Salary: " + salary);
+        System.out.println(name);
+        System.out.println(age);
+        System.out.println(phone);
+        System.out.println(address);
+        System.out.println(salary);
     }
 }
 
@@ -22,7 +22,7 @@ class Officer extends Employee {
 
     void printOfficer() {
         printDetails();
-        System.out.println("Specialization: " + specialization);
+        System.out.println(specialization);
     }
 }
 
@@ -31,7 +31,7 @@ class Manager extends Employee {
 
     void printManager() {
         printDetails();
-        System.out.println("Department: " + department);
+        System.out.println(department);
     }
 }
 
@@ -41,6 +41,7 @@ public class EmployeeInheritance {
 
         Scanner sc = new Scanner(System.in);
 
+        // Officer Input
         Officer officer = new Officer();
 
         officer.name = sc.nextLine();
@@ -49,11 +50,12 @@ public class EmployeeInheritance {
 
         officer.phone = sc.nextLine();
         officer.address = sc.nextLine();
-        officer.salary = sc.nextInt();
+        officer.salary = sc.nextDouble();
         sc.nextLine();
 
         officer.specialization = sc.nextLine();
 
+        // Manager Input
         Manager manager = new Manager();
 
         manager.name = sc.nextLine();
@@ -62,10 +64,12 @@ public class EmployeeInheritance {
 
         manager.phone = sc.nextLine();
         manager.address = sc.nextLine();
-        manager.salary = sc.nextInt();
+        manager.salary = sc.nextDouble();
         sc.nextLine();
 
         manager.department = sc.nextLine();
+
+        // Output
         System.out.println("Officer:");
         officer.printOfficer();
 
