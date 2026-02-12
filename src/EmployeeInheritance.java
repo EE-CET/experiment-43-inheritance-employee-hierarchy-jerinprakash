@@ -1,33 +1,77 @@
 import java.util.Scanner;
 
 class Employee {
-   
+
+    String name;
+    int age;
+    String phone;
+    String address;
+    double salary;
+
+    void printDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Phone: " + phone);
+        System.out.println("Address: " + address);
+        System.out.println("Salary: " + salary);
+    }
 }
 
-// TODO: Create class Officer extends Employee
-// Add 'specialization' attribute
+class Officer extends Employee {
+    String specialization;
 
-// TODO: Create class Manager extends Employee
-// Add 'department' attribute
+    void printOfficer() {
+        printDetails();
+        System.out.println("Specialization: " + specialization);
+    }
+}
+
+class Manager extends Employee {
+    String department;
+
+    void printManager() {
+        printDetails();
+        System.out.println("Department: " + department);
+    }
+}
 
 public class EmployeeInheritance {
-   
-        
-        // --- OFFICER INPUT ---
-        // Create Officer object
-        // Read name, age, phone, address, salary, specialization
-        // Hint: Use sc.nextLine() for strings to capture spaces, sc.nextInt() for numbers.
-        // Be careful with buffer clearing after nextInt()!
-        
-        // --- MANAGER INPUT ---
-        // Create Manager object
-        // Read name, age, phone, address, salary, department
-        
-        // --- OUTPUT ---
-        // Print "Officer:"
-        // Print officer details (one per line)
-        
-        // Print "Manager:"
-        // Print manager details (one per line)
-    
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        Officer officer = new Officer();
+
+        officer.name = sc.nextLine();
+        officer.age = sc.nextInt();
+        sc.nextLine();
+
+        officer.phone = sc.nextLine();
+        officer.address = sc.nextLine();
+        officer.salary = sc.nextDouble();
+        sc.nextLine();
+
+        officer.specialization = sc.nextLine();
+
+        Manager manager = new Manager();
+
+        manager.name = sc.nextLine();
+        manager.age = sc.nextInt();
+        sc.nextLine();
+
+        manager.phone = sc.nextLine();
+        manager.address = sc.nextLine();
+        manager.salary = sc.nextDouble();
+        sc.nextLine();
+
+        manager.department = sc.nextLine();
+        System.out.println("Officer:");
+        officer.printOfficer();
+
+        System.out.println("Manager:");
+        manager.printManager();
+
+        sc.close();
+    }
 }
